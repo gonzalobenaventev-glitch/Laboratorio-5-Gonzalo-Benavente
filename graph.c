@@ -42,8 +42,15 @@ Graph* createGraph()
 
 void addNode(Graph* g, const char* label) 
 {
-    if (!g || !label) return;
+    if (!g || !label) return; //g o label estando vacíos
 
+    if (map_search(g->adjacencyMap, (void*) label) != NULL) //Se verifica la existencia del mapa
+    {
+        return;
+    }
+    char* newLabel = list_create();
+
+    map_insert(g->adjacencyMap, newLabel, edgesList); //se inserta en el mapa el nodo
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) 

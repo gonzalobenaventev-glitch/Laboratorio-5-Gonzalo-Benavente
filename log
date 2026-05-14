@@ -15,3 +15,17 @@ Thu May 14 05:14:39 PM UTC 2026:
  1 file changed, 21 insertions(+), 6 deletions(-)
  tests:  0|0
 c18d42b
+Thu May 14 05:20:51 PM UTC 2026: 
+ graph.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:51:22: error: initialization of ‘char *’ from incompatible pointer type ‘List *’ [-Wincompatible-pointer-types]
+   51 |     char* newLabel = list_create();
+      |                      ^~~~~~~~~~~
+graph.c:53:43: error: ‘edgesList’ undeclared (first use in this function)
+   53 |     map_insert(g->adjacencyMap, newLabel, edgesList); //se inserta en el mapa el nodo
+      |                                           ^~~~~~~~~
+graph.c:53:43: note: each undeclared identifier is reported only once for each function it appears in
+af19505
