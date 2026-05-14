@@ -110,13 +110,13 @@ int getWeight(Graph* g, const char* label1, const char* label2)
         return -1; 
     }
 
-    List* aristas1 = pares1->value;
+    List* aristas1 = (List*) pares1->value;
 
     void* target1 = list_first(aristas1);
 
     while (target1 != NULL)
     {
-        if (strcmp(((const char*)target1->target, label2) == 0)
+        if (strcmp(((void*)target1->target, (void*)label2) == 0)
         {
             return target1->weight;
         }
