@@ -144,3 +144,13 @@ graph.c:91:21: error: initialization of ‘List *’ from incompatible pointer t
       |                     ^~~~~~~~~~
 cc1: all warnings being treated as errors
 9b3b184
+Thu May 14 08:10:00 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:91:21: error: initialization of ‘List *’ from incompatible pointer type ‘MapPair *’ [-Wincompatible-pointer-types]
+   91 |     List* aristas = map_search(g->adjacencyMap, (void*) label);
+      |                     ^~~~~~~~~~
+f2801ec
