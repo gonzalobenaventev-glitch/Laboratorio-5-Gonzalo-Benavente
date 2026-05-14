@@ -116,7 +116,7 @@ int getWeight(Graph* g, const char* label1, const char* label2)
 
     while (target1 != NULL)
     {
-        if (strcmp(((char*)target1->target, label2) == 0)
+        if (strcmp(((const char*)target1->target, label2) == 0)
         {
             return target1->weight;
         }
