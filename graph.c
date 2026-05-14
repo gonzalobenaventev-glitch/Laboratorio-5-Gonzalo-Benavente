@@ -88,13 +88,14 @@ List* getEdges(Graph* g, const char* label)
         return NULL;
     }
 
-    List* aristas = map_search(g->adjacencyMap, (void*) label);
+    MapPair* pair = map_search(g->adjacencyMap, (void*) label);
 
-    if (aristas == NULL)
+    if (pair == NULL)
     {
         return NULL;
     }
-
+    List* aristas = pair->value;
+    
     return aristas;
 }
 

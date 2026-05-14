@@ -182,3 +182,9 @@ graph.c:91:21: error: initialization of ‘List *’ from incompatible pointer t
    91 |     List* aristas = map_search(g->adjacencyMap, (void*)label);
       |                     ^~~~~~~~~~
 b92c3ea
+Thu May 14 08:14:30 PM UTC 2026: 
+ graph.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ tests:  8|2
+========================================
+e47fed9
