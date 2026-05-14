@@ -81,7 +81,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
     }
 }
 
-/*List* getEdges(Graph* g, const char* label) 
+List* getEdges(Graph* g, const char* label) 
 {
     if (!g || !label) return NULL;
 
@@ -135,4 +135,4 @@ void destroyGraph(Graph* g) {
     map_clean(g->adjacencyMap);
     free(g->adjacencyMap);
     free(g);
-}*/
+}
