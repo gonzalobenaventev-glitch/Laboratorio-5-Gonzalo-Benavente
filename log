@@ -34,3 +34,26 @@ Thu May 14 05:22:51 PM UTC 2026:
  1 file changed, 3 insertions(+), 1 deletion(-)
  tests:  0|0
 4c11a70
+Thu May 14 05:31:46 PM UTC 2026: 
+ graph.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:75:9: error: ‘newEdge’ undeclared (first use in this function); did you mean ‘newEdege’?
+   75 |         newEdge->target = strdup(dest); //Se copia el destino
+      |         ^~~~~~~
+      |         newEdege
+graph.c:75:9: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:79:23: error: ‘edgeList’ undeclared (first use in this function); did you mean ‘edgesList’?
+   79 |         list_pushBack(edgeList, newEdge);
+      |                       ^~~~~~~~
+      |                       edgesList
+graph.c:73:15: error: unused variable ‘newEdege’ [-Werror=unused-variable]
+   73 |         Edge* newEdege = (Edge*) malloc (sizeof(Edge));
+      |               ^~~~~~~~
+graph.c:71:15: error: unused variable ‘edgesList’ [-Werror=unused-variable]
+   71 |         List* edgesList = (List*) pair->value;
+      |               ^~~~~~~~~
+cc1: all warnings being treated as errors
+111aaeb

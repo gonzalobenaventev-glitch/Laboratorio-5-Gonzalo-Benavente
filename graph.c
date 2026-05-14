@@ -48,7 +48,7 @@ void addNode(Graph* g, const char* label)
     {
         return;
     }
-    char* newLabel = strdup(label);
+    char* newLabel = strdup(label); //Se copia la etiqueta
 
     List* edgesList = list_create();
 
@@ -59,6 +59,25 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
 {
     if (!g || !src || !dest) return;
 
+    if (!map_search(g->adjacencyMap, (void*) src) || !map_search(g->adjacencyMap, (void*) dest)) //Se verifica la existencia de todos los nodos
+    {
+        return;
+    }
+
+    MapPair* pair = map_search(g->adjacencyMap, (void*) src);
+
+    if (pair != NULL)
+    {
+        List* edgesList = (List*) pair->value;
+
+        Edge* newEdege = (Edge*) malloc (sizeof(Edge));
+
+        newEdge->target = strdup(dest); //Se copia el destino
+
+        newEdge->weight = weight;
+
+        list_pushBack(edgeList, newEdge);
+    }
 }
 
 List* getEdges(Graph* g, const char* label) 
