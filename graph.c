@@ -127,6 +127,8 @@ int getWeight(Graph* g, const char* label1, const char* label2)
         }
     }
 
+    return -1;
+
     
 }
 
