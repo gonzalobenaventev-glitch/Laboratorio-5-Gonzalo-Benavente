@@ -103,9 +103,14 @@ int getWeight(Graph* g, const char* label1, const char* label2)
 {
     if (!g || !label1 || !label2) return -1; //Inexistentes o nulos
 
-    
+    MapPair pares1 = map_search(g->adjacencyMap, (void*) label);
     // Si no existe el origen o terminamos de iterar sin encontrar el destino
-    return -1; 
+    if (pares1 == NULL)
+    {
+        return -1; 
+    }
+
+    
 }
 
 // Retorna una nueva List* que contiene elementos de tipo char* (las etiquetas)
