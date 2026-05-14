@@ -242,3 +242,22 @@ graph.c:132:1: error: control reaches end of non-void function [-Werror=return-t
       | ^
 cc1: all warnings being treated as errors
 3fd8c13
+Thu May 14 08:50:54 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:120:34: error: dereferencing ‘void *’ pointer [-Werror]
+  120 |         if (strcmp((Edge*)target1->target, label2) == 0)
+      |                                  ^~
+graph.c:120:34: error: request for member ‘target’ in something not a structure or union
+graph.c:122:27: error: dereferencing ‘void *’ pointer [-Werror]
+  122 |             return target1->weight;
+      |                           ^~
+graph.c:122:27: error: request for member ‘weight’ in something not a structure or union
+graph.c:132:1: error: control reaches end of non-void function [-Werror=return-type]
+  132 | }
+      | ^
+cc1: all warnings being treated as errors
+05afe8a
