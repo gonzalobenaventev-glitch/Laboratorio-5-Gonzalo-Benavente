@@ -188,3 +188,29 @@ Thu May 14 08:14:30 PM UTC 2026:
  tests:  8|2
 ========================================
 e47fed9
+Thu May 14 08:34:15 PM UTC 2026: 
+ graph.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:106:58: error: ‘label’ undeclared (first use in this function); did you mean ‘label2’?
+  106 |     MapPair pares1 = map_search(g->adjacencyMap, (void*) label);
+      |                                                          ^~~~~
+      |                                                          label2
+graph.c:106:58: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:108:16: error: invalid operands to binary == (have ‘MapPair’ and ‘void *’)
+  108 |     if (pares1 == NULL)
+      |                ^~
+graph.c:113:28: error: invalid type argument of ‘->’ (have ‘MapPair’)
+  113 |     List* aristas1 = pares1->value;
+      |                            ^~
+graph.c:120:20: error: ‘aristas’ undeclared (first use in this function); did you mean ‘aristas1’?
+  120 |         int peso = aristas->weight;
+      |                    ^~~~~~~
+      |                    aristas1
+graph.c:131:1: error: control reaches end of non-void function [-Werror=return-type]
+  131 | }
+      | ^
+cc1: all warnings being treated as errors
+a66d36a
