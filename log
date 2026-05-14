@@ -154,3 +154,21 @@ graph.c:91:21: error: initialization of ‘List *’ from incompatible pointer t
    91 |     List* aristas = map_search(g->adjacencyMap, (void*) label);
       |                     ^~~~~~~~~~
 f2801ec
+Thu May 14 08:11:59 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:91:49: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   91 |     List* aristas = map_search(g->adjacencyMap, label);
+      |                                                 ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:91:21: error: initialization of ‘List *’ from incompatible pointer type ‘MapPair *’ [-Wincompatible-pointer-types]
+   91 |     List* aristas = map_search(g->adjacencyMap, label);
+      |                     ^~~~~~~~~~
+cc1: all warnings being treated as errors
+d2e85f3
