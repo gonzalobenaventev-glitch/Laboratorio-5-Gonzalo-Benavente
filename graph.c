@@ -105,7 +105,8 @@ List* getAdjacentLabels(Graph* g, const char* label)
     return NULL; 
 }
 
-void destroyGraph(Graph* g) {
+void destroyGraph(Graph* g) 
+{
     if (!g) return;
 
     MapPair* pair = map_first(g->adjacencyMap);
