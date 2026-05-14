@@ -70,7 +70,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
     {
         List* edgesList = (List*) pair->value;
 
-        Edge* newEdege = (Edge*) malloc (sizeof(Edge));
+        Edge* newEdge = (Edge*) malloc (sizeof(Edge));
 
         newEdge->target = strdup(dest); //Se copia el destino
 

@@ -57,3 +57,19 @@ graph.c:71:15: error: unused variable ‘edgesList’ [-Werror=unused-variable]
       |               ^~~~~~~~~
 cc1: all warnings being treated as errors
 111aaeb
+Thu May 14 05:34:03 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:79:23: error: ‘edgeList’ undeclared (first use in this function); did you mean ‘edgesList’?
+   79 |         list_pushBack(edgeList, newEdge);
+      |                       ^~~~~~~~
+      |                       edgesList
+graph.c:79:23: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:71:15: error: unused variable ‘edgesList’ [-Werror=unused-variable]
+   71 |         List* edgesList = (List*) pair->value;
+      |               ^~~~~~~~~
+cc1: all warnings being treated as errors
+cc283af
