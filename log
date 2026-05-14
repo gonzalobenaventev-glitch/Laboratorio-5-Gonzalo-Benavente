@@ -81,3 +81,22 @@ Thu May 14 05:34:36 PM UTC 2026:
 Thu May 14 05:36:54 PM UTC 2026: 
  tests:  0|0
 4d1b7a5
+Thu May 14 06:01:44 PM UTC 2026: 
+ graph.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+Compilation failed
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /tmp/ccvGOf8G.o: in function `test_getEdges':
+/home/runner/workspace/test.c:138:(.text+0x4d7): undefined reference to `getEdges'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /tmp/ccvGOf8G.o: in function `test_getWeight':
+/home/runner/workspace/test.c:165:(.text+0x5bd): undefined reference to `getWeight'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /home/runner/workspace/test.c:172:(.text+0x602): undefined reference to `getWeight'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /tmp/ccvGOf8G.o: in function `test_integracion_rutas':
+/home/runner/workspace/test.c:227:(.text+0x7e8): undefined reference to `getEdges'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /home/runner/workspace/test.c:236:(.text+0x81b): undefined reference to `getWeight'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /home/runner/workspace/test.c:239:(.text+0x836): undefined reference to `destroyGraph'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /home/runner/workspace/test.c:230:(.text+0x868): undefined reference to `destroyGraph'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /home/runner/workspace/test.c:245:(.text+0x892): undefined reference to `getWeight'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /home/runner/workspace/test.c:248:(.text+0x8ab): undefined reference to `destroyGraph'
+/nix/store/mkvc0lnnpmi604rqsjdlv1pmhr638nbd-binutils-2.44/bin/ld: /home/runner/workspace/test.c:254:(.text+0x8d4): undefined reference to `destroyGraph'
+collect2: error: ld returned 1 exit status
+b1d1690

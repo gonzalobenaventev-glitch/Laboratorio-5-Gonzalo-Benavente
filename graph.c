@@ -12,7 +12,8 @@
  *         ESTRUCTURAS INTERNAS
  * ========================================= */
 
-struct Graph {
+struct Graph 
+{
     // Un solo mapa basta: Llave (char* label) -> Valor (List* de Edge*)
     Map* adjacencyMap; 
 };
@@ -50,7 +51,7 @@ void addNode(Graph* g, const char* label)
     }
     char* newLabel = strdup(label); //Se copia la etiqueta
 
-    List* edgesList = list_create();
+    List* edgesList = list_create(); //Se crea una lista
 
     map_insert(g->adjacencyMap, newLabel, edgesList); //se inserta en el mapa el nodo
 }
@@ -64,7 +65,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
         return;
     }
 
-    MapPair* pair = map_search(g->adjacencyMap, (void*) src);
+    MapPair* pair = map_search(g->adjacencyMap, (void*) src); //Se busca el src en el mapa
 
     if (pair != NULL)
     {
@@ -80,7 +81,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
     }
 }
 
-List* getEdges(Graph* g, const char* label) 
+/*List* getEdges(Graph* g, const char* label) 
 {
     if (!g || !label) return NULL;
 
@@ -134,4 +135,4 @@ void destroyGraph(Graph* g) {
     map_clean(g->adjacencyMap);
     free(g->adjacencyMap);
     free(g);
-}
+}*/
