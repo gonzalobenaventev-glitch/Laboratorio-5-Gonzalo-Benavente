@@ -48,7 +48,9 @@ void addNode(Graph* g, const char* label)
     {
         return;
     }
-    char* newLabel = list_create();
+    char* newLabel = strdup(label);
+
+    List* edgesList = list_create();
 
     map_insert(g->adjacencyMap, newLabel, edgesList); //se inserta en el mapa el nodo
 }
