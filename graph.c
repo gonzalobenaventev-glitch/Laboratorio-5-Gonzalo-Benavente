@@ -103,7 +103,7 @@ int getWeight(Graph* g, const char* label1, const char* label2)
 {
     if (!g || !label1 || !label2) return -1; //Inexistentes o nulos
 
-    MapPair pares1 = map_search(g->adjacencyMap, (void*) label);
+    MapPair pares1 = map_search(g->adjacencyMap, (void*) label1);
     // Si no existe el origen o terminamos de iterar sin encontrar el destino
     if (pares1 == NULL)
     {
@@ -117,7 +117,12 @@ int getWeight(Graph* g, const char* label1, const char* label2)
 
     while (target1 != NULL)
     {
-        if (strcmp((Edge*)target1->weight, label2) == 0)
+        if (strcmp((Edge*)target1->target, label2) == 0)
+        {
+            return target1->weight;
+        }
+
+        else
         {
             target1 = list_next(aristas1);
         }

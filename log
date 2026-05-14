@@ -214,3 +214,31 @@ graph.c:131:1: error: control reaches end of non-void function [-Werror=return-t
       | ^
 cc1: all warnings being treated as errors
 a66d36a
+Thu May 14 08:50:23 PM UTC 2026: 
+ graph.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:106:22: error: invalid initializer
+  106 |     MapPair pares1 = map_search(g->adjacencyMap, (void*) label1);
+      |                      ^~~~~~~~~~
+graph.c:108:16: error: invalid operands to binary == (have ‘MapPair’ and ‘void *’)
+  108 |     if (pares1 == NULL)
+      |                ^~
+graph.c:113:28: error: invalid type argument of ‘->’ (have ‘MapPair’)
+  113 |     List* aristas1 = pares1->value;
+      |                            ^~
+graph.c:120:34: error: dereferencing ‘void *’ pointer [-Werror]
+  120 |         if (strcmp((Edge*)target1->target, label2) == 0)
+      |                                  ^~
+graph.c:120:34: error: request for member ‘target’ in something not a structure or union
+graph.c:122:27: error: dereferencing ‘void *’ pointer [-Werror]
+  122 |             return target1->weight;
+      |                           ^~
+graph.c:122:27: error: request for member ‘weight’ in something not a structure or union
+graph.c:132:1: error: control reaches end of non-void function [-Werror=return-type]
+  132 | }
+      | ^
+cc1: all warnings being treated as errors
+3fd8c13
