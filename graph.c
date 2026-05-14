@@ -115,16 +115,12 @@ int getWeight(Graph* g, const char* label1, const char* label2)
     void* target1 = list_first(aristas1);
 
 
-    if (strcmp(target1, (void*)label2) == 0)
+    while (target1 != NULL)
     {
-        int peso = aristas->weight;
-
-        return peso;
-    }
-
-    else
-    {
-        target1 = list_next(aristas1);
+        if (strcmp((Edge*)target1->weight, label2) == 0)
+        {
+            target1 = list_next(aristas1);
+        }
     }
 
     
